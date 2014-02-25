@@ -1,0 +1,6 @@
+18C
+
+In 6.857, Ronald Xu was given the biggest challenge of his life yet: a single encrypted file.
+
+Unfortunately, he had spent every class playing Wordament (great game). He only remembered
+a few phrases: ansatz, 7, lowercase.
