@@ -93,7 +93,7 @@ binary = starter + binary
 encBinary = binaryToFormat(binary)
 #print encBinary
 
-final = genJunk(30120) + encBinary + genJunk(18000) + insert + genJunk(19123) 
+final = genJunk(70120) + encBinary + genJunk(38000) + insert + genJunk(49123) 
 
 out = open('puzzle.txt','w')
 out.write(final)
