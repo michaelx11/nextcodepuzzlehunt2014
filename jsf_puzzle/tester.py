@@ -30,7 +30,7 @@ def convertToBinary(s):
 
 binary = convertToBinary(match)
 
-print binary
+#print binary
 
 def parseK(s,k):
     news = ''
@@ -46,7 +46,7 @@ le = len('ConvertFollowingToBase10') * 8
 remaining = binary[le:]
 
 base10 = str(int(remaining,2))
-print base10
+#print base10
 
 def mapBack(s):
     news = ''

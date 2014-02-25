@@ -1,15 +1,13 @@
 import re, random
 
-control = ' #@;:.?$^&*<'
-chunk = r", <<X=\w+>> [%s]+[\w\d]+,>,[\w\d]+[%s]+,>" % ((control,) * 2)
-solutionString = "sOluTiOn"[::-1]
-
-valid = re.compile(chunk*8)
+control = ' #@;:.?$^&*<>=-_+'
+chunk = ">>:X=\w+:<<"
+solutionString = "sOluTiOn"
 
 def randomControl():
     return random.choice(control)
 
-letterOrNum = 'abcdefghijklmnopqrstuvwyzABCDEFGHIJKLMNOPQRSTUVWYZ0123456789'
+letterOrNum = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
 def randomLetterOrNum():
     return random.choice(letterOrNum)
@@ -20,23 +18,23 @@ def randomK():
 def genJunk(k):
     s = ''
     for u in range(k):
-        if random.random() > .5:
+        if random.random() < .3:
             s += randomControl()
         else:
             s += randomLetterOrNum()
     return s
 
-insert = ''
-insert += ', <<X='
-insert += solutionString + '>> '
-insert += ''.join([randomControl() for u in range(randomK())])
-insert += ''.join([randomLetterOrNum() for u in range(randomK())])
-insert += ',>,'
+insert = '>>:X=%s:<<' % solutionString
+#insert += ', <<X='
+#insert += solutionString + '>> '
+#nsert += ''.join([randomControl() for u in range(randomK())])
+#insert += ''.join([randomLetterOrNum() for u in range(randomK())])
+#insert += ',>,'
 #insert += ''.join([randomLetterOrNum() for u in range(randomK())])
 #insert += ''.join([randomControl() for u in range(randomK())])
-insert += ''.join([randomLetterOrNum() for u in range(randomK())])
-insert += ''.join([randomControl() for u in range(randomK())])
-insert += ',>'
+#insert += ''.join([randomLetterOrNum() for u in range(randomK())])
+#insert += ''.join([randomControl() for u in range(randomK())])
+#insert += ',>'
 
 #print chunk
 print insert
@@ -94,7 +92,7 @@ binary = starter + binary
 encBinary = binaryToFormat(binary)
 #print encBinary
 
-final = genJunk(15000) + encBinary + genJunk(22000)
+final = genJunk(30000) + encBinary + genJunk(12000) + insert + genJunk(19123) 
 
 out = open('puzzle.txt','w')
 out.write(final)
