@@ -1,3 +1,5 @@
+JSFuck
+
 Jonathan Sorzo: "F**k! This puzzle is a bunch of nonsense. All I have is this 
 strange expression and a huge text file. If only it were regular, then we could find the part that's important".
 

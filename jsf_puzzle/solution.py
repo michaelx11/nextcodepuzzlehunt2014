@@ -1,8 +1,9 @@
 import re, random
 
 control = ' #@;:.?$^&*<>=-_+'
-chunk = ">>:X=\w+:<<"
-solutionString = "sOluTiOn"
+chunk = ">>X=?<<"
+regex = ">>X=\w+<<"
+solutionString = "MuShRoomS"
 
 def randomControl():
     return random.choice(control)
@@ -24,7 +25,7 @@ def genJunk(k):
             s += randomLetterOrNum()
     return s
 
-insert = '>>:X=%s:<<' % solutionString
+insert = '>>X=%s<<' % solutionString
 #insert += ', <<X='
 #insert += solutionString + '>> '
 #nsert += ''.join([randomControl() for u in range(randomK())])
@@ -40,7 +41,7 @@ insert = '>>:X=%s:<<' % solutionString
 print insert
 
 
-s = re.search(chunk, insert)
+s = re.search(regex, insert)
 print s.group(0)
 
 def binaryToFormat(binary):
@@ -92,7 +93,7 @@ binary = starter + binary
 encBinary = binaryToFormat(binary)
 #print encBinary
 
-final = genJunk(30000) + encBinary + genJunk(12000) + insert + genJunk(19123) 
+final = genJunk(30120) + encBinary + genJunk(18000) + insert + genJunk(19123) 
 
 out = open('puzzle.txt','w')
 out.write(final)

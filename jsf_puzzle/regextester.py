@@ -6,5 +6,5 @@ for line in f:
     s += line.strip()
 f.close()
 
-pat = re.compile('>>:X=\w+:<<')
+pat = re.compile('>>X=\w+<<')
 print pat.search(s).group()
