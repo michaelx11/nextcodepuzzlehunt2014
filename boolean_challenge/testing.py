@@ -32,10 +32,11 @@ def dfs(startNode, endNode, neighbors):
     Q, seen = [startNode], {startNode}
     while Q:
         x = Q.pop()
-        print x, Q
-        for neighbor in filter(lambda x : x not in seen, neighbors[x]):
-            Q.append(neighbor)
-            seen.add(neighbor)
+        print x, Q, neighbors[x]
+        nbs = filter(lambda x: x not in seen, neighbors[x])
+        Q.extend(nbs)
+        seen.update(nbs)
+        print 'after', Q, seen
     return endNode in seen
 
 

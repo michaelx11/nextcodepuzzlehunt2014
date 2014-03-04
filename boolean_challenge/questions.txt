@@ -1,6 +1,6 @@
 1. Splay trees still maintain their amortized bounds even if single rotations, instead of double rotations, are used to "splay" elements. F
 2. Fibonacci heaps, although always clumped with Dijkstra's Algorithm for their superior amortized bounds, are not used widely in practice. T
-3. The best known algorithms for Matrix Multiplication are O(n^3). F
+#3. The best known algorithms for Matrix Multiplication are O(n^3). F
 4. The Levinson Algorithm can be used to solve an n by n matrix in O(n^2) time. F
 5. While constructing a Voronoi diagram using Fortune's Algorithm, the sweep line is a straight line, while the beach line is composed
 of parabolas. T
@@ -38,9 +38,9 @@ def dfs(startNode, endNode, neighbors):
     Q, seen = [startNode], {startNode}
     while Q:
         x = Q.pop()
-        for neighbor in filter(lambda x : x not in seen, neighbors[x]):
-            Q.append(neighbor)
-            seen.add(neighbor)
+        nbs = filter(lambda x: x not in seen, neighbors[x])
+        Q.extend(nbs)
+        seen.update(nbs)
     return endNode in seen
 
 T
