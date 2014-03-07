@@ -1,19 +1,16 @@
 import java.util.*;
 import java.io.*;
 
-public class arrayindex {
+public class two {
 
     static class Number {
         protected int data;
-
         Number(int x) {
             data = x;
         }
-
         void messUp() {
             this.data = (this.data + 7) % 3;
         }
-
         public String toString() {
             return String.format("NUMBER: %d", this.data);
         }
@@ -21,7 +18,6 @@ public class arrayindex {
 
     public static void main(String ... args) throws IOException {
         int[] array = new int[12];
-
         System.out.println(array[13]);
 
         Number mynumber = new Number(0);

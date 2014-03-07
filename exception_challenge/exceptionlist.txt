@@ -1,0 +1,19 @@
+TypeError: cannot concatenate 'str' and 'int' objects
+java.lang.ArrayIndexOutOfBoundsException
+java.lang.ArithmeticException
+java.lang.NullPointerException
+Segmentation fault (core dumped)
+unreachable statement
+IndexError: pop from empty list
+ValueError: need more than 2 values to unpack
+
+1. 12
+2. 21
+3. 16
+4. 15
+5. 10
+6. 10
+7. 22
+8. 20
+
+IndexError: list index out of range

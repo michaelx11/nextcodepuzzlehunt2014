@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class zero {
+public class three {
     
     public static void main(String ... args) throws IOException {
         int y = 0;
