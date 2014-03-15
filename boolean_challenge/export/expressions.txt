@@ -1,0 +1,53 @@
+1. a | !(b & c) | d         = A1 ---> (A1, ?, 1, 0)
+2. (a & b) & (c ^ d)        = A2 ---> (1, A2, ?, 1)
+3. !((a ^ b) & (c ^ d))     = A3 ---> (A3, 1, 1, ?)
+4. (a | b) ^ (!c & d)       = A4 ---> (0, 0, ?, A4)
+5. (a ^ b) & (c | !d)       = A5 ---> (0, 1, ?, A5)
+6. (a | b & !c) ^ d         = A6 ---> (0, A6, ?, 0) 
+7. (a | b) & (c ^ !d)       = A7 ---> (A7, 1, ?, 0)
+8. a ^ b ^ c ^ d            = A8 ---> (A8, 0, ?, 0)
+
+''.join(map(str,range(1,9)))
+
+
+1. Splay trees still maintain their amortized bounds even if single rotations, instead of double rotations, are used to "splay" elements.
+
+2. 
+# returns a^b % m
+# b >= 0
+def modPow(a, b, m):
+    if not b:
+        return 1
+    x = modPow(a, b/2, m)
+    return (a * x ** 2) % m if b % 2 else (x ** 2) % m
+
+3. The Levinson Algorithm can be used to solve an n by n matrix in O(n^2) time.
+
+4.
+# Check if endNode is reachable from startNode
+# neighbors[node] contains all neighbors of "node"
+def dfs(startNode, endNode, neighbors):
+    Q, seen = [startNode], {startNode}
+    while Q:
+        x = Q.pop()
+        nbs = filter(lambda x: x not in seen, neighbors[x])
+        Q.extend(nbs)
+        seen.update(nbs)
+    return endNode in seen
+
+5. Range trees can be extended to d dimensions and still complete queries in O(n log^(d-1)n + k) time, where k is the number of hits.
+
+6. Fibonacci heaps, although always clumped with Dijkstra's Algorithm for their superior amortized bounds, are not used widely in practice.
+
+7. 
+# returns a list of prime numbers less than or equal to n
+def eratosthenesSieve(n):
+    limit = int(n ** .5)
+    candidates = list(range(n + 1))
+    for i in range(2, limit + 1):
+        if candidates[i]:
+            candidates[2*i::i] = [None] * len(candidates[2*i::i])
+    return [i for i in candidates if i]
+
+8. While constructing a Voronoi diagram using Fortune's Algorithm, the sweep line is a straight line, while the beach line is composed
+of parabolas.

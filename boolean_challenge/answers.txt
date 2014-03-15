@@ -1,0 +1,8 @@
+F B
+T W
+F B
+T W
+T W
+T W
+F B
+T W

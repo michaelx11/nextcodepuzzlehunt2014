@@ -1,0 +1,34 @@
+1. w - easy-trivial
+4. w - easy
+5. w - easy
+6. b - kinda cute
+8. w - easy
+9. b - kinda cute
+10. b - easy
+11. w - easy/mod
+13. b - moderate
+15. w - moderate
+16. b - castle-moderate
+17. black to move
+18. w - moderate
+19. w - moderate
+20. b - moderate
+21. b - moderate
+22. btm
+23. b - moderate-easy
+24. btm - kills white, nice
+25. wtm - w - ok
+26. btw - w - ok
+27. wtm - w - pretty good
+
+Decided:
+
+1. 20
+2. 15
+3. 21
+4. 18
+5. 25
+6. 19
+7. 23
+8. 27
+
