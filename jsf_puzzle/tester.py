@@ -38,8 +38,8 @@ def parseK(s,k):
         news += chr(int(s[i:i+8],2))
     return news
 
-firstChunk = parseK(binary,100)
-print 'yo',firstChunk
+firstChunk = parseK(binary,80)
+print firstChunk
 
 le = len('ConvertFollowingToBase10') * 8
 

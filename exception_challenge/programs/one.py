@@ -12,4 +12,4 @@ y += x
 print 'yo: ' + x
 
 
-print y
+print y / 20

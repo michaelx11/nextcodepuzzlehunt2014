@@ -3,15 +3,19 @@ import re, random
 control = ' #@;:.?$^&*<>=-_+'
 chunk = ">>X=?<<"
 regex = ">>X=\w+<<"
-solutionString = "MuShRoomS"
+solutionString = "gRu.MpY!"
 
 def randomControl():
     return random.choice(control)
 
-letterOrNum = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+nums = '0123456789'
 
-def randomLetterOrNum():
-    return random.choice(letterOrNum)
+def randomLetter():
+    return random.choice(letters)
+
+def randomNum():
+    return random.choice(nums)
 
 def randomK():
     return int(random.random() * 20 + 2)
@@ -19,10 +23,13 @@ def randomK():
 def genJunk(k):
     s = ''
     for u in range(k):
-        if random.random() < .3:
+        p = random.random()
+        if p < .3:
             s += randomControl()
+        elif p < .9:
+            s += randomLetter()
         else:
-            s += randomLetterOrNum()
+            s += randomNum()
     return s
 
 insert = '>>X=%s<<' % solutionString
@@ -41,8 +48,8 @@ insert = '>>X=%s<<' % solutionString
 print insert
 
 
-s = re.search(regex, insert)
-print s.group(0)
+#s = re.search(regex, insert)
+#print s.group(0)
 
 def binaryToFormat(binary):
     s = ''
@@ -93,7 +100,7 @@ binary = starter + binary
 encBinary = binaryToFormat(binary)
 #print encBinary
 
-final = genJunk(70120) + encBinary + genJunk(38000) + insert + genJunk(49123) 
+final = genJunk(79120) + encBinary + genJunk(38000) + insert + genJunk(69123) 
 
 out = open('puzzle.txt','w')
 out.write(final)

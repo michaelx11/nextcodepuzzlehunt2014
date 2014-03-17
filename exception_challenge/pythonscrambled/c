@@ -1,0 +1,22 @@
+import math
+import time
+
+L = list(range(100))
+def reverse(s,e,L): L[s:e] = L[s:e][::-1]
+reverse(50,61,L)
+reverse(10,40,L)
+reverse(17,80,L)
+reverse(37,73,L)
+reverse(7,24,L)
+reverse(59,64,L)
+reverse(45,67,L)
+reverse(23,97,L)
+reverse(10,11,L)
+reverse(4,58,L)
+reverse(5,99,L)
+reverse(30,70,L)
+reverse(78,87,L)
+reverse(23,35,L)
+reverse(45,78,L)
+print y
+print L[70]

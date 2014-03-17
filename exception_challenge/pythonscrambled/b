@@ -1,0 +1,26 @@
+import math
+import pickle
+import time
+import os
+import sys
+import subprocess
+
+L = [None] * 3
+L.extend(list(range(16)))
+
+L[8] = -1
+L[2] = L[1:4]
+L[3] = L[2:5]
+L[7] = L[-2:-1:1]
+L[1] = L[0:6:2]
+L[0] = L[1][0]
+L[9] = map(str, L[7:10])
+L[10] = filter(lambda x: x, L[8:10])
+L[11] = L[3] + L[1]
+L[6] = L[3] + [None]
+L[15] = [i for i in L]
+L[16] = list(L)
+
+print len(L[0])
+
+print len(L[6])

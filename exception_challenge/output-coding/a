@@ -1,0 +1,15 @@
+import math
+
+
+L = list(range(27))
+
+for i in range(5):
+    L.extend(L)
+
+L = L[-2:1:-27]
+
+
+
+print L[47]
+
+print int(math.pi * 2)
